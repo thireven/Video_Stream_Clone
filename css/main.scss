@@ -1,0 +1,65 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: grey;
+}
+
+header {
+  display: flex;
+  background: rgb(51, 51, 51);
+  align-items: center;
+  padding: 5px;
+  position: relative;
+
+  & > div {
+    padding: 0 10px;
+
+  }
+
+  .logo-container {
+    flex: 0;
+  }
+
+  .searchbar-container {
+    flex: 1;
+
+    #searchbar-group {
+      max-width: 70%;
+      margin: 0 auto;
+    }
+  }
+
+  .user-container {
+    width: 150px;
+    color: white;
+    text-align: right;
+
+    span {
+      cursor: pointer;
+      font-size: 24px;
+    }
+  }
+
+  #user-popup-container {
+    position: absolute;
+    background: white;
+    width: 150px;
+    top: 36px;
+    right: 0;
+
+    a {
+      text-align: left;
+      display: block;
+      font-size: 15px;
+      color: black;
+      padding: 5px 10px;
+    }
+  }
+}
+
+main {
+  border: 1px solid blue;
+}
