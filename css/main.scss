@@ -4,12 +4,12 @@ html, body {
 }
 
 body {
-  background: grey;
+  background: hsl(0, 0%, 30%);
 }
 
 header {
   display: flex;
-  background: rgb(51, 51, 51);
+  background: hsl(0, 0%, 20%);
   align-items: center;
   padding: 5px;
   position: relative;
@@ -58,8 +58,123 @@ header {
       padding: 5px 10px;
     }
   }
+
+  .upload-btn-container {
+    border-radius: 20px;
+    background: green;
+    color: white;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+
+    &:hover {
+      background: white;
+      color: green;
+    }
+
+    i {
+      line-height: 40px;
+      vertical-align: middle;
+      font-size: 25px;
+    }
+  }
 }
 
 main {
-  border: 1px solid blue;
+  margin-top: 40px;
+}
+
+#filter-container {
+  text-align: right;
+  position: relative;
+
+  .sort-thing {
+    cursor: pointer;
+    color: hsl(0, 0%, 85%);
+  }
+
+  #sort-popup-container {
+    position: absolute;
+    right: 0;
+    top: 24px;
+    background: white;
+    color: black;
+
+    .sort-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        text-align: left;
+        margin: 0;
+        padding: 5px 30px;
+        border-bottom: 1px solid hsl(0, 0%, 94%);
+        cursor: pointer;
+
+        &:last-child {
+          border: 0;
+        }
+
+        &:hover {
+          background: hsl(0, 0%, 96%);
+        }
+      }
+    }
+  }
+}
+
+.videos-container {
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: wrap;
+
+  margin-top: 10px;
+
+  .video-item {
+    margin-bottom: 20px;
+
+    .video-title {
+      color: hsl(0, 0%, 65%);
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 1.2em;
+      display: block;
+      text-decoration: none;
+      margin: 10px 0;
+
+      &:hover {
+        color: purple;
+      }
+    }
+
+    .preview-container {
+      position: relative;
+
+      img {
+        width: 100%;
+      }
+
+      .video-duration {
+        display: inline-block;
+        right: 0;
+        bottom: 0;
+        padding: 5px;
+        background: hsl(0, 0%, 35%);
+        color: hsl(0, 0%, 100%);
+        font-size: 11px;
+        position: absolute;
+      }
+    }
+
+    .video-metadata {
+      color: hsl(0, 0%, 46%);
+      font-size: 12px;
+    }
+  }
+
+}
+
+.hide {
+  display: none;
 }

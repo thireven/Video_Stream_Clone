@@ -4,7 +4,7 @@ html, body {
 }
 
 body {
-  background: grey;
+  background: #4d4d4d;
 }
 
 header {
@@ -67,7 +67,117 @@ header #user-popup-container a {
   padding: 5px 10px;
 }
 
+header .upload-btn-container {
+  border-radius: 20px;
+  background: green;
+  color: white;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+header .upload-btn-container:hover {
+  background: white;
+  color: green;
+}
+
+header .upload-btn-container i {
+  line-height: 40px;
+  vertical-align: middle;
+  font-size: 25px;
+}
+
 main {
-  border: 1px solid blue;
+  margin-top: 40px;
+}
+
+#filter-container {
+  text-align: right;
+  position: relative;
+}
+
+#filter-container .sort-thing {
+  cursor: pointer;
+  color: #d9d9d9;
+}
+
+#filter-container #sort-popup-container {
+  position: absolute;
+  right: 0;
+  top: 24px;
+  background: white;
+  color: black;
+}
+
+#filter-container #sort-popup-container .sort-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#filter-container #sort-popup-container .sort-list li {
+  text-align: left;
+  margin: 0;
+  padding: 5px 30px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+#filter-container #sort-popup-container .sort-list li:last-child {
+  border: 0;
+}
+
+#filter-container #sort-popup-container .sort-list li:hover {
+  background: whitesmoke;
+}
+
+.videos-container {
+  margin-top: 10px;
+}
+
+.videos-container .video-item {
+  margin-bottom: 20px;
+}
+
+.videos-container .video-item .video-title {
+  color: #a6a6a6;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.2em;
+  display: block;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.videos-container .video-item .video-title:hover {
+  color: purple;
+}
+
+.videos-container .video-item .preview-container {
+  position: relative;
+}
+
+.videos-container .video-item .preview-container img {
+  width: 100%;
+}
+
+.videos-container .video-item .preview-container .video-duration {
+  display: inline-block;
+  right: 0;
+  bottom: 0;
+  padding: 5px;
+  background: #595959;
+  color: white;
+  font-size: 11px;
+  position: absolute;
+}
+
+.videos-container .video-item .video-metadata {
+  color: #757575;
+  font-size: 12px;
+}
+
+.hide {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

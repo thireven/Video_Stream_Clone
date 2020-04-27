@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="css/fa.min.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -21,17 +22,101 @@
             <input id="searchbar-input" type="text" class="form-control" placeholder="Search" />
           </div>
         </div>
+        <a href="#" class="upload-btn-container" title="Upload something">
+          <i class="fas fa-upload"></i>
+        </a>
         <div class="user-container">
-          <span>Thireven <i class="fas fa-caret-down"></i></span>
-          <div id="user-popup-container">
+          <span id="user">Thireven <i class="fas fa-caret-down"></i></span>
+          <div id="user-popup-container" class="hide">
             <a href="#">Login</a>
             <a href="#">Register</a>
           </div>
         </div>
       </header>
       <main>
-          ASDF
+          <div id="filter-container">
+            <span class="sort-thing">Sort by <i class="fas fa-caret-down"></i></span>
+            <div id="sort-popup-container" class="hide">
+              <ul class="sort-list">
+                <li>Recent</li>
+                <li>Longest</li>
+                <li>Viewed</li>
+              </ul>
+            </div>
+          </div>
+          <div class="videos-container row">
+            <div class="video-item col-lg-3 col-md-4 col-sm-6">
+              <div class="preview-container">
+                <img src="http://azyrusthemes.com/circlevideo/images/video1-1.png" />
+                <span class="video-duration">3:15</span>
+              </div>
+              <a href="#" class="video-title">Lorem ipsum poplum kipsum</a>
+              <div class="video-metadata">123,123,123 Views</div>
+            </div>
+
+          </div>
+
       </main>
     </div>
+
+    <script>
+
+      $(function() {
+        const body = $('body');
+        const userEle = $('#user');
+        const sortEle = $('.sort-thing');
+        const userPopupContainer = $('#user-popup-container');
+        const sortPopupContainer = $('#sort-popup-container');
+
+        let isUserPopupShown = false;
+        let isSortPopupShown = false;
+
+        function hideSortPopup() {
+          sortPopupContainer.addClass('hide');
+          isSortPopupShown = false;
+          body.off('click', hideSortPopup);
+        }
+
+        function showSortPopup(e) {
+          sortPopupContainer.removeClass('hide');
+          isSortPopupShown = true;
+
+          setTimeout(function() {
+            body.on('click', hideSortPopup);
+          }, 1);
+        }
+
+        function hideUserPopup() {
+          userPopupContainer.addClass('hide');
+          isUserPopupShown = false;
+          body.off('click', hideUserPopup);
+        }
+
+        function showUserPopup(e) {
+          userPopupContainer.removeClass('hide');
+          isUserPopupShown = true;
+
+          setTimeout(function() {
+            body.on('click', hideUserPopup);
+          }, 1);
+        }
+
+        userEle.on('click', function(e) {
+          if (isUserPopupShown) {
+            hideUserPopup(e);
+          } else {
+            showUserPopup(e);
+          }
+        });
+
+        sortEle.on('click', function(e) {
+          if (isSortPopupShown) {
+            hideSortPopup(e);
+          } else {
+            showSortPopup(e);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
